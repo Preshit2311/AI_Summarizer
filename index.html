@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Summarizer Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>AI Text Summarizer Pro</h1>
+            </div>
+            
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-pencil-alt"></i>
+                    Input Text
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltiptext">Paste or type your text. Our AI will analyze and summarize it.</span>
+                    </div>
+                </h2>
+                <textarea id="inputText" placeholder="Paste or type your text here...">Artificial intelligence (AI) is intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals. AI applications include advanced web search engines, recommendation systems, understanding human speech, self-driving cars, automated decision-making and competing at the highest level in strategic game systems.
+
+As machines become increasingly capable, tasks considered to require "intelligence" are often removed from the definition of AI, a phenomenon known as the AI effect. For instance, optical character recognition is frequently excluded from things considered to be AI, having become a routine technology.
+
+Artificial intelligence was founded as an academic discipline in 1955, and in the years since has experienced several waves of optimism. The field was founded on the assumption that human intelligence "can be so precisely described that a machine can be made to simulate it". This raises philosophical arguments about the mind and the ethics of creating artificial beings endowed with human-like intelligence.</textarea>
+                <div class="word-count">Word count: <span id="inputWordCount">0</span></div>
+                
+                <div class="options">
+                    <div class="option-item">
+                        <input type="checkbox" id="bulletPoints" checked>
+                        <label for="bulletPoints">Bullet Points</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="highlightKeyPoints">
+                        <label for="highlightKeyPoints">Highlight Key Points</label>
+                    </div>
+                    <div class="option-item">
+                        <label for="summaryLength">Summary Length: </label>
+                        <input type="range" id="summaryLength" min="1" max="100" value="50">
+                        <span id="lengthValue">50%</span>
+                    </div>
+                </div>
+
+                <div class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="zh">Chinese</option>
+                    </select>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                
+                <button class="btn" id="summarizeBtn">
+                    <i class="fas fa-robot"></i>
+                    Summarize Text
+                </button>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-file-alt"></i>
+                    AI Summary
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltiptext">Your AI-generated summary will appear here with key insights.</span>
+                    </div>
+                </h2>
+                <div class="loading" id="loadingIndicator">
+                    <div class="spinner"></div>
+                    <p>AI is analyzing your text...</p>
+                    <p class="word-count">Processing: <span id="progressPercent">0%</span></p>
+                </div>
+                <div class="summary-output" id="summaryOutput">
+                    <p>Your summary will appear here. Click the "Summarize Text" button to generate an AI-powered summary.</p>
+                </div>
+                <div class="word-count">Word count: <span id="outputWordCount">0</span> | Reading time: <span id="readingTime">0</span> min</div>
+                
+                <div class="action-buttons">
+                    <button class="secondary-btn" id="copyBtn">
+                        <i class="fas fa-copy"></i>
+                        Copy Summary
+                    </button>
+                    <button class="secondary-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i>
+                        Download
+                    </button>
+                    <button class="secondary-btn" id="clearBtn">
+                        <i class="fas fa-trash"></i>
+                        Clear
+                    </button>
+                    <button class="secondary-btn" id="shareBtn">
+                        <i class="fas fa-share-alt"></i>
+                        Share
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer>
+        <p>AI Text Summarizer Pro &copy; 2025| Made By Preshit</p>
+    </footer>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">Operation completed successfully</span>
+    </div>
+
+    <script src="Ai.js"></script>
+  
+</body>
+</html>
